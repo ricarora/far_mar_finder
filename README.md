@@ -1,13 +1,12 @@
 # FarMar Finder
 
+In this assignment we will be creating an application to look up Farmers Markets and their related vendors, products, and sales. We will use CSV files as our database.
+
 ## Authors
 
 Richa Arora
 
 Kathy Lepe
-
-
-In this assignment we will be creating an application to look up Farmers Markets and their related vendors, products, and sales. We will use CSV files as our database.
 
 ### Getting Started
 
