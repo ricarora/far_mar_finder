@@ -33,18 +33,18 @@ module FarMar
     end
 
     def sales
-      # eturns a collection of FarMar::Sale instances that are associated with
+      # returns a collection of FarMar::Sale instances that are associated with
       # market by the vendor_id field
 
     end
 
     def revenue
-      #returns the the sum of all of the vendor's sales (in cents)
+      # returns the the sum of all of the vendor's sales (in cents)
 
     end
 
     def self.by_market(market_id)
-      #returns all of the products with the given vendor_id
+      # returns all of the products with the given vendor_id
 
     end
 
@@ -61,7 +61,7 @@ module FarMar
     def sales
       # returns a collection of FarMar::Sale instances that are associated
       # with market using the FarMar::Sale
-      
+
     end
 
     def number_of_sales
