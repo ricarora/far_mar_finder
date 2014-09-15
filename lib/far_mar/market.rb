@@ -3,7 +3,7 @@ module FarMar
     attr_reader :id, :market_name, :address, :city, :county, :state, :zip_code
 
     def initialize (id, market_name, address, city, county, state, zip_code)
-      @id = id
+      @id = id.to_i
       @market_name = market_name
       @address = address
       @city = city
@@ -19,7 +19,7 @@ module FarMar
 
     def self.find(id)
       # returns the row where the ID field matches the argument
-      CSV.read("support/markets.csv").collect {|row| }
+      Market.new *CSV.read("support/markets.csv").find {|row| (row[0].to_i || "") == id }
     end
 
     def vendors
