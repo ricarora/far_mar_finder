@@ -1,9 +1,10 @@
 module FarMar
   class Market
+    attr_reader :id, :market_name, :address, :city, :county, :state, :zip_code
 
     def self.all
       # returns all rows of the CSV file as objects
-      support/market.csv
+      CSV.read("support/markets.csv").collect {|market| market = Market.new}
     end
 
     def self.find(id)

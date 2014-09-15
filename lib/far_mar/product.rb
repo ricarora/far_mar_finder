@@ -1,4 +1,4 @@
-module  FarMar
+module FarMar
   class Product
 
     def vendor
