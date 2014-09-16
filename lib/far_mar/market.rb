@@ -29,8 +29,7 @@ module FarMar
 
       # returns a collection of FarMar::Vendor instances that are associated
       # with the market by the market_id field.
-
-      Vendor.new CSV.read("support/vendors.csv").find_all {|row| row[-1] == FarMar::Market.id }
+      Vendor.new CSV.read("support/vendors.csv").find_all {|row| row[-1] == FarMar::Market.new.id}
 
     end
 
