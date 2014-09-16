@@ -1,15 +1,15 @@
 module FarMar
   class Market
-    attr_reader :id, :market_name, :address, :city, :county, :state, :zip_code
+    attr_reader :id, :name, :address, :city, :county, :state, :zip
 
-    def initialize (id, market_name, address, city, county, state, zip_code)
+    def initialize (id, name, address, city, county, state, zip)
       @id = id.to_i
-      @market_name = market_name
+      @name = name
       @address = address
       @city = city
       @county = county
       @state = state
-      @zip_code = zip_code
+      @zip = zip
     end
 
     def self.all
@@ -19,6 +19,8 @@ module FarMar
 
     def self.find(id)
       # returns the row where the ID field matches the argument
+      # find method is finding one row for the matching id
+      # then passed to market.new to convert as object
       Market.new *CSV.read("support/markets.csv").find {|row| (row[0].to_i || "") == id }
     end
 
