@@ -1,5 +1,6 @@
 module FarMar
   class Vendor
+    
 
     def market
       # returns the FarMar::Market instance that is associated with this vendor
