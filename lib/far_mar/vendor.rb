@@ -1,7 +1,5 @@
 module FarMar
   class Vendor
-
-
     attr_accessor :id, :name, :product, :market_id
 
     def initialize
