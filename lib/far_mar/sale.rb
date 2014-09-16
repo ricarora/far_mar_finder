@@ -3,11 +3,11 @@ module FarMar
     attr_accessor :id, :amount_in_cents, :purchase_time, :vendor_id, :product_id
 
     def initialize(id, amount_in_cents, purchase_time, vendor_id, product_id)
-      @id = id
-      @amount_in_cents = amount_in_cents
+      @id = id.to_i
+      @amount_in_cents = amount_in_cents.to_i
       @purchase_time = purchase_time
-      @vendor_id = vendor_id
-      @product_id = product_id
+      @vendor_id = vendor_id.to_i
+      @product_id = product_id.to_i
 
     end
 
