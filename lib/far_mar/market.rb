@@ -31,7 +31,7 @@ module FarMar
       # with the market by the market_id field.
 
       Vendor.new CSV.read("support/vendors.csv").find_all {|row| row[-1] == CSV.read("support/markets.csv").find {|r| (r[0].to_i || "") == row[-1] }.id}
-
+        
     end
 
   end
