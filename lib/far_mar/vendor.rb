@@ -3,10 +3,10 @@ module FarMar
     attr_accessor :id, :name, :number_of_employees, :market_id
 
     def initialize(id, name, number_of_employees, market_id)
-      @id = id
+      @id = id.to_i
       @name = name
       @number_of_employees = number_of_employees
-      @market_id = market_id
+      @market_id = market_id.to_i
     end
 
     def self.all
