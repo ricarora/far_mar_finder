@@ -1,6 +1,6 @@
 module FarMar
   class Vendor
-    
+
 
     attr_accessor :id, :name, :product, :market_id
 
@@ -11,6 +11,17 @@ module FarMar
       @market_id = market_id
     end
 
+    def self.all
+      # returns all rows of the CSV file as objects
+      CSV.read("support/vendors.csv").collect {|row| Vendor.new *row }
+    end
+
+    def self.find(id)
+      # returns the row where the ID field matches the argument
+      # find method is finding one row for the matching id
+      # then passed to market.new to convert as object
+      Vendor.new *CSV.read("support/vendors.csv").find {|row| (row[0].to_i || "") == id }
+    end
 
     def market
       # returns the FarMar::Market instance that is associated with this vendor
