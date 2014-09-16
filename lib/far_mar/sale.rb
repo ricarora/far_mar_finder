@@ -1,5 +1,15 @@
 module FarMar
   class Sale
+    attr_accessor :id, :transaction, :time, :market_id, :vendor_id
+
+    def initialize
+      @id = id
+      @transaction = transaction
+      @time = time
+      @market_id = market_id
+      @vendor_id = vendor_id
+
+    end
 
     def self.all
       # returns all rows of the CSV file as objects
