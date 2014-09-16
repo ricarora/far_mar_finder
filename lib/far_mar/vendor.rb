@@ -1,6 +1,16 @@
 module FarMar
   class Vendor
 
+    attr_accessor :id, :name, :product, :market_id
+
+    def initialize
+      @id = id
+      @name = name
+      @product = product
+      @market_id = market_id
+    end
+
+
     def market
       # returns the FarMar::Market instance that is associated with this vendor
       # using the FarMar::Vendor market_id field
