@@ -1,13 +1,13 @@
 module FarMar
   class Sale
-    attr_accessor :id, :transaction, :time, :market_id, :vendor_id
+    attr_accessor :id, :amount_in_cents, :purchase_time, :vendor_id, :product_id
 
     def initialize
       @id = id
-      @transaction = transaction
-      @time = time
-      @market_id = market_id
+      @amount_in_cents = amount_in_cents
+      @purchase_time = purchase_time
       @vendor_id = vendor_id
+      @product_id = product_id
 
     end
 
