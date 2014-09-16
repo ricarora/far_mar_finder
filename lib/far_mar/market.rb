@@ -1,6 +1,7 @@
 module FarMar
   class Market
     attr_reader :id, :name, :address, :city, :county, :state, :zip
+    attr_accessor :vendors
 
     def initialize (id, name, address, city, county, state, zip)
       @id = id.to_i
@@ -10,6 +11,7 @@ module FarMar
       @county = county
       @state = state
       @zip = zip
+
     end
 
     def self.all
@@ -27,6 +29,7 @@ module FarMar
     def vendors
       # returns a collection of FarMar::Vendor instances that are associated
       # with the market by the market_id field.
+      Market.new CSV.read("support/vendors.csv"). {|}
 
     end
 
