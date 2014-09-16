@@ -2,7 +2,7 @@ module FarMar
   class Sale
     attr_accessor :id, :amount_in_cents, :purchase_time, :vendor_id, :product_id
 
-    def initialize
+    def initialize(id, amount_in_cents, purchase_time, vendor_id, product_id)
       @id = id
       @amount_in_cents = amount_in_cents
       @purchase_time = purchase_time

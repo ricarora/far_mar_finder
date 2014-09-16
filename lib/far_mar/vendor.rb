@@ -2,7 +2,7 @@ module FarMar
   class Vendor
     attr_accessor :id, :name, :number_of_employees, :market_id
 
-    def initialize
+    def initialize(id, name, number_of_employees, market_id)
       @id = id
       @name = name
       @number_of_employees = number_of_employees
