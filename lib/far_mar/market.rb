@@ -29,7 +29,7 @@ module FarMar
     def vendors
       # returns a collection of FarMar::Vendor instances that are associated
       # with the market by the market_id field.
-      Market.new CSV.read("support/vendors.csv"). {|}
+
 
     end
 
