@@ -39,6 +39,7 @@ module FarMar
     def sales
       # returns a collection of FarMar::Sale instances that are associated with
       # market by the vendor_id field
+      Sale.all.find_all {|sale| sale.vendor_id == @id}
 
     end
 
