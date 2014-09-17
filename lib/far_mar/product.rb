@@ -42,6 +42,7 @@ module FarMar
 
     def number_of_sales
       # returns the number of times this product has been sold
+      Sale.all.find_all {|sale| sale.product_id == @id}
 
     end
 
