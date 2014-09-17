@@ -27,6 +27,7 @@ module FarMar
       # returns the FarMar::Vendor instance that is associated with this sale
       # using the FarMar::Sale vendor_id field
 
+      Vendor.all.find_all {|vendor| vendor.market_id == @id}
     end
 
     def product
