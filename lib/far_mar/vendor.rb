@@ -45,7 +45,8 @@ module FarMar
 
     def revenue
       # returns the the sum of all of the vendor's sales (in cents)
-
+      sum = 0
+      Sale.all.find {|sale| sum+=sale.amount if sale.vendor_id == @id_.to_f}
     end
 
     def self.by_market(market_id)
