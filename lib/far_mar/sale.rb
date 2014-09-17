@@ -33,6 +33,7 @@ module FarMar
     def product
       # returns the FarMar::Product instance that is associated with this sale
       # using the FarMar::Sale product_id field
+      Product.find {|vendor| vendor.id == @product_id}
 
     end
 
