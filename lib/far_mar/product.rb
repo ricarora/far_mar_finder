@@ -27,7 +27,7 @@ module FarMar
       # using the FarMar::Product vendor_id field
 
 
-      Vendor.all.find_all {|vendor| vendor.id == @vendor_id}
+      Vendor.all.find {|vendor| vendor.id == @vendor_id}
 
     end
 
