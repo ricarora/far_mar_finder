@@ -33,5 +33,38 @@ module FarMar
       Vendor.all.find_all {|vendor| vendor.market_id == @id}
     end
 
+    def products
+      # returns a collection of FarMar::Product instances that are associated to
+      # the market through the FarMar::Vendor class.
+
+    end
+
+    def self.search(search_term)
+      # returns a collection of FarMar::Market instances where the market name or
+      # vendor name contain the search_term. For example FarMar::Market.search('school')
+      # would return 3 results, one being the market with id 75 (Fox School Farmers FarMar::Market).
+
+    end
+
+    def prefered_vendor
+      # returns the vendor with the highest revenue
+
+    end
+
+    def prefered_vendor(date)
+      # returns the vendor with the highest revenue for the given date
+
+    end
+
+    def worst_vendor
+      # returns the vendor with the lowest revenue
+
+    end
+
+    def worst_vendor(date)
+      # returns the vendor with the lowest revenue on the given date
+      
+    end
+
   end
 end
