@@ -48,7 +48,7 @@ module FarMar
 
     def self.by_vendor(vendor_id)
       # returns all of the products with the given vendor_id
-
+      
     end
 
   end
