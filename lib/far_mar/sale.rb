@@ -27,13 +27,13 @@ module FarMar
       # returns the FarMar::Vendor instance that is associated with this sale
       # using the FarMar::Sale vendor_id field
 
-      Vendor.all.find_all {|vendor| vendor.id == @vendor_id}
+      Vendor.all.find {|vendor| vendor.id == @vendor_id}
     end
 
     def product
       # returns the FarMar::Product instance that is associated with this sale
       # using the FarMar::Sale product_id field
-      Product.find {|vendor| vendor.id == @product_id}
+      Product.all.find {|product| product.id == @product_id}
 
     end
 
