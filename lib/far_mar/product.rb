@@ -38,7 +38,7 @@ module FarMar
       # list_of_vendors = market.vendors
       # list_of_vendors.each {|each_vendor| (Sale.all.find_all {|sale| sale.product_id == @id})}
       Sale.all.find_all {|sale| sale.product_id == @id}
-      
+
     end
 
     def number_of_sales
@@ -51,6 +51,11 @@ module FarMar
       # returns all of the products with the given vendor_id
 
       Product.all.find_all {|product| product.vendor_id == vendor_id}
+
+    end
+
+    def self.most_revenue(n)
+      # returns the top n products instances ranked by total revenue
 
     end
 
