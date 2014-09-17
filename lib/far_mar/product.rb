@@ -48,7 +48,9 @@ module FarMar
 
     def self.by_vendor(vendor_id)
       # returns all of the products with the given vendor_id
-      
+
+      Product.all.find_all {|product| product.vendor_id == vendor_id}
+
     end
 
   end
