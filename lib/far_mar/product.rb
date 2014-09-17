@@ -3,14 +3,14 @@ module FarMar
     attr_accessor :id, :name, :vendor_id
 
     def initialize(id, name, vendor_id)
-      @id - id.to_i
+      @id = id.to_i
       @name = name
       @vendor_id = vendor_id.to_i
     end
 
     def self.all
       # returns all rows of the CSV file as objects
-      CSV.read("support/products.csv")
+      CSV.read("support/products.csv").collect {|row| Product.new *row }
 
 
     end
