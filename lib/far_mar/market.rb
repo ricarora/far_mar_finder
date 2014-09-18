@@ -44,7 +44,7 @@ module FarMar
       # returns a collection of FarMar::Market instances where the market name or
       # vendor name contain the search_term. For example FarMar::Market.search('school')
       # would return 3 results, one being the market with id 75 (Fox School Farmers FarMar::Market).
-
+      Market.all.find_all {|market| market.name == search_term || market.vendors.name == search_term }
     end
 
     def prefered_vendor
