@@ -63,7 +63,7 @@ module FarMar
 
     def self.most_revenue(n)
       # returns the top n vendor instances ranked by total revenue
-      
+      Vendor.all.sort_by {|vendor| vendor.revenue }.reverse.first(n)
     end
 
     def self.most_items(n)
