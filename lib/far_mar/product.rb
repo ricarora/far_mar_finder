@@ -56,7 +56,7 @@ module FarMar
 
     def self.most_revenue(n)
       # returns the top n products instances ranked by total revenue
-
+      Product.all.sort_by {|product| }
     end
 
   end

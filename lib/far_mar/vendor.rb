@@ -49,8 +49,8 @@ module FarMar
       # (1..3).inject(0) {}
       # sales.collect {|sale| sale.amount}.reduce(0) {|sum, amt| sum+amt}
       # sales.map(&:amount).reduce(:+)
-      sum = 0
-      Sale.all.find {|sale| sum+=sale.amount if sale.vendor_id == @id}
+
+      sales.inject(0) {|sum, sale| sum + sale.amount }
 
     end
 
@@ -63,7 +63,7 @@ module FarMar
 
     def self.most_revenue(n)
       # returns the top n vendor instances ranked by total revenue
-
+      
     end
 
     def self.most_items(n)
