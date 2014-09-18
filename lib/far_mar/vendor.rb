@@ -45,8 +45,13 @@ module FarMar
 
     def revenue
       # returns the the sum of all of the vendor's sales (in cents)
+      # sales.inject(0) {|sum, sale| sum + sale.amount }
+      # (1..3).inject(0) {}
+      # sales.collect {|sale| sale.amount}.reduce(0) {|sum, amt| sum+amt}
+      # sales.map(&:amount).reduce(:+)
       sum = 0
-      Sale.all.find {|sale| sum+=sale.amount if sale.vendor_id == @id_.to_f}
+      Sale.all.find {|sale| sum+=sale.amount if sale.vendor_id == @id}
+
     end
 
     def self.by_market(market_id)
@@ -73,7 +78,7 @@ module FarMar
 
     def revenue(date)
       # returns the total revenue for that specific purchase date and vendor instance
-      
+
     end
 
   end
