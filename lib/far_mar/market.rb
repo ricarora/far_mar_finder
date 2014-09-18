@@ -36,7 +36,7 @@ module FarMar
     def products
       # returns a collection of FarMar::Product instances that are associated to
       # the market through the FarMar::Vendor class.
-
+      
     end
 
     def self.search(search_term)
@@ -63,7 +63,7 @@ module FarMar
 
     def worst_vendor(date)
       # returns the vendor with the lowest revenue on the given date
-      
+
     end
 
   end
