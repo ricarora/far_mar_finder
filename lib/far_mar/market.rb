@@ -36,7 +36,7 @@ module FarMar
     def products
       # returns a collection of FarMar::Product instances that are associated to
       # the market through the FarMar::Vendor class.
-      
+
     end
 
     def self.search(search_term)
@@ -48,12 +48,12 @@ module FarMar
 
     def prefered_vendor
       # returns the vendor with the highest revenue
-
+      Vendor.most_revenue(1) if vendor.market_id == @id
     end
 
     def prefered_vendor(date)
       # returns the vendor with the highest revenue for the given date
-
+      
     end
 
     def worst_vendor
