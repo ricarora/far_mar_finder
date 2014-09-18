@@ -59,7 +59,8 @@ module FarMar
 
     def worst_vendor
       # returns the vendor with the lowest revenue
-
+      bad_vendors = Vendor.most_revenue(vendors.count) if vendor.market_id == @id
+      bad_vendors.reverse.first(1)
     end
 
     def worst_vendor(date)
