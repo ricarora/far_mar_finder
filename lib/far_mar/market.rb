@@ -36,7 +36,8 @@ module FarMar
     def products
       # returns a collection of FarMar::Product instances that are associated to
       # the market through the FarMar::Vendor class.
-      
+      Product.all.find_all {|vendor|vendor.market == @market_id }
+
     end
 
     def self.search(search_term)
