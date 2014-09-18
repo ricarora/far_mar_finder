@@ -78,7 +78,7 @@ module FarMar
 
     def revenue(date)
       # returns the total revenue for that specific purchase date and vendor instance
-
+      vendor.sales.inject(0) {|sum, vendor| sum + vendor.revenue if vendor.purchase_date == Date.parse(date)}
     end
 
   end
