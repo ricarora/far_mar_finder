@@ -49,7 +49,7 @@ module FarMar
 
     def prefered_vendor
       # returns the vendor with the highest revenue
-
+      Vendor.most_revenue(1) if vendor.market_id == @id
     end
 
     def prefered_vendor(date)
