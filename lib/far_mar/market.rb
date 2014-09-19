@@ -68,6 +68,7 @@ module FarMar
       # case-insensitive attribute matches the match parameter. For instance,
       # FarMar::Vendor.find_by_name("windler inc") could find a FarMar::Vendor
       # with the name attribute "windler inc" or "Windler Inc".
+      
 
     end
 
