@@ -19,7 +19,8 @@ module FarMar
       # returns the row where the ID field matches the argument
       # find method is finding one row for the matching id
       # then passed to market.new to convert as object
-      Product.new *CSV.read("support/products.csv").find {|row| (row[0].to_i || "") == id }
+      # Product.new *CSV.read("support/products.csv").find {|row| (row[0].to_i || "") == id }
+      Product.all.find {|product| (product.id || "") == id }
     end
 
     def vendor
