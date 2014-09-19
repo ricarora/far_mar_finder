@@ -50,7 +50,6 @@ module FarMar
       # (1..3).inject(0) {}
       # sales.collect {|sale| sale.amount}.reduce(0) {|sum, amt| sum+amt}
       # sales.map(&:amount).reduce(:+)
-
       sales.inject(0) {|sum, sale| sum + sale.amount }
 
     end
