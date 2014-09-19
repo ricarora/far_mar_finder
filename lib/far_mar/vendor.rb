@@ -11,7 +11,7 @@ module FarMar
 
     def self.all
       # returns all rows of the CSV file as objects
-      CSV.read("support/vendors.csv").collect {|row| Vendor.new *row }
+      CSV.read("support/vendors.csv").collect { |row| Vendor.new *row }
     end
 
     def self.find(id)
@@ -19,7 +19,7 @@ module FarMar
       # find method is finding one row for the matching id
       # then passed to market.new to convert as object
       # Vendor.new *CSV.read("support/vendors.csv").find {|row| (row[0].to_i || "") == id }
-      Vendor.all.find {|vendor| (vendor.id || "") == id }
+      Vendor.all.find { |vendor| (vendor.id || "") == id }
     end
 
     def market
@@ -34,13 +34,13 @@ module FarMar
       # market = Market.find(@id)
 	    # all_vendors = market.vendors
 	    # all_vendors.collect {|each_vendor| Product.all.find_all {|product| product.vendor_id == each_vendors.id }}
-      Product.all.find_all {|product| product.vendor_id == @id }
+      Product.all.find_all { |product| product.vendor_id == @id }
     end
 
     def sales
       # returns a collection of FarMar::Sale instances that are associated with
       # market by the vendor_id field
-      Sale.all.find_all {|sale| sale.vendor_id == @id}
+      Sale.all.find_all { |sale| sale.vendor_id == @id }
     end
 
     def revenue
@@ -49,7 +49,7 @@ module FarMar
       # (1..3).inject(0) {}
       # sales.collect {|sale| sale.amount}.reduce(0) {|sum, amt| sum+amt}
       # sales.map(&:amount).reduce(:+)
-      sales.inject(0) {|sum, sale| sum + sale.amount }
+      sales.inject(0) { |sum, sale| sum + sale.amount }
     end
 
     def self.by_market(market_id)
@@ -60,25 +60,24 @@ module FarMar
 
     def self.most_revenue(n)
       # returns the top n vendor instances ranked by total revenue
-      Vendor.all.sort_by {|vendor| vendor.revenue }.reverse.first(n)
+      Vendor.all.sort_by { |vendor| vendor.revenue }.reverse.first(n)
     end
 
     def self.most_items(n)
       # returns the top n vendor instances ranked by total number of items sold
-      Vendor.all.sort_by {|vendor| vendor.products.count }.reverse.first(n)
+      Vendor.all.sort_by { |vendor| vendor.products.count }.reverse.first(n)
     end
 
     def self.revenue(date)
       # returns the total revenue for that date across all vendors
       #Vendor.all.inject(0) {|sum, vendor| sum + vendor.revenue if vendor.sales.purchase_date == Date.parse(date)}
-      Vendor.all.select {|vendor| vendor.sales.purchase_date == Date.parse(date) }.inject(0) {|sum, vendor| sum + vendor.revenue }
+      Vendor.all.select { |vendor| vendor.sales.purchase_date == Date.parse(date) }.inject(0) { |sum, vendor| sum + vendor.revenue }
     end
 
     def revenue(date)
       # returns the total revenue for that specific purchase date and vendor instance
-      #vendor.sales.inject(0) {|sum, vendor| sum + vendor.revenue if vendor.purchase_date == Date.parse(date)}
-      vendor.sales.select {|vendor| vendor.purchase_date == Date.parse(date) }.inject(0) {|sum, vendor| sum + vendor.revenue }
+      # vendor.sales.inject(0) {|sum, vendor| sum + vendor.revenue if vendor.purchase_date == Date.parse(date)}
+      vendor.sales.select { |vendor| vendor.purchase_date == Date.parse(date) }.inject(0) { |sum, vendor| sum + vendor.revenue }
     end
-
   end
 end
