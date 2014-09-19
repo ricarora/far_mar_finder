@@ -11,8 +11,6 @@ module FarMar
     def self.all
       # returns all rows of the CSV file as objects
       CSV.read("support/products.csv").collect {|row| Product.new *row }
-
-
     end
 
     def self.find(id)
