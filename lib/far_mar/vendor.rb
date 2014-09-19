@@ -73,12 +73,14 @@ module FarMar
 
     def self.revenue(date)
       # returns the total revenue for that date across all vendors
-      Vendor.all.inject(0) {|sum, vendor| sum + vendor.revenue if vendor.sales.purchase_date == Date.parse(date)}
+      #Vendor.all.inject(0) {|sum, vendor| sum + vendor.revenue if vendor.sales.purchase_date == Date.parse(date)}
+      Vendor.all.select {|vendor| vendor.sales.purchase_date == Date.parse(date) }.inject(0) {|sum, vendor| sum + vendor.revenue }
     end
 
     def revenue(date)
       # returns the total revenue for that specific purchase date and vendor instance
-      vendor.sales.inject(0) {|sum, vendor| sum + vendor.revenue if vendor.purchase_date == Date.parse(date)}
+      #vendor.sales.inject(0) {|sum, vendor| sum + vendor.revenue if vendor.purchase_date == Date.parse(date)}
+      vendor.sales.select {|vendor| vendor.purchase_date == Date.parse(date) }.inject(0) {|sum, vendor| sum + vendor.revenue }
     end
 
   end
