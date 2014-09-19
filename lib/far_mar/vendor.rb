@@ -41,7 +41,6 @@ module FarMar
       # returns a collection of FarMar::Sale instances that are associated with
       # market by the vendor_id field
       Sale.all.find_all {|sale| sale.vendor_id == @id}
-
     end
 
     def revenue
@@ -51,14 +50,12 @@ module FarMar
       # sales.collect {|sale| sale.amount}.reduce(0) {|sum, amt| sum+amt}
       # sales.map(&:amount).reduce(:+)
       sales.inject(0) {|sum, sale| sum + sale.amount }
-
     end
 
     def self.by_market(market_id)
       # returns all of the products with the given market_id
       market = Market.find(market_id)
 	    market.vendors
-
     end
 
     def self.most_revenue(n)

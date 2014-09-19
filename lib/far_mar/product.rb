@@ -27,7 +27,6 @@ module FarMar
       # returns the FarMar::Vendor instance that is associated with this vendor
       # using the FarMar::Product vendor_id field
       Vendor.all.find {|vendor| vendor.id == @vendor_id}
-
     end
 
     def sales
@@ -37,20 +36,16 @@ module FarMar
       # list_of_vendors = market.vendors
       # list_of_vendors.each {|each_vendor| (Sale.all.find_all {|sale| sale.product_id == @id})}
       Sale.all.find_all {|sale| sale.product_id == @id}
-
     end
 
     def number_of_sales
       # returns the number of times this product has been sold
       Sale.all.find_all {|sale| sale.product_id == @id}
-
     end
 
     def self.by_vendor(vendor_id)
       # returns all of the products with the given vendor_id
-
       Product.all.find_all {|product| product.vendor_id == vendor_id}
-
     end
 
     def self.most_revenue(n)
