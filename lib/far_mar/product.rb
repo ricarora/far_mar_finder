@@ -52,19 +52,18 @@ module FarMar
       Product.all.sort_by { |product| product.number_of_sales }.reverse.first(n)
     end
 
-    def self.find_by_x(match)
+    def self.find_by(search_what, match)
       # where X is an attribute, returns a single instance whose X attribute
       # case-insensitive attribute matches the match parameter. For instance,
       # FarMar::Vendor.find_by_name("windler inc") could find a FarMar::Vendor
       # with the name attribute "windler inc" or "Windler Inc".
-
+      Product.all.find { |product| product.send(search_what.to_sym).casecmp(match) == 0 }
     end
 
-    def self.find_all_by_x(match)
+    def self.find_all_by(search_what, match)
       # works just like `find_by_x` but returns a collection containing all
       # possible matches. For example `FarMar::Market.find_by_state("WA")` could
       # return all of the FarMar::Market object with `"WA"` in their state field.
-
-    end
+      Product.all.select { |product| product.send(search_what.to_sym).casecmp(match) == 0 }
   end
 end
