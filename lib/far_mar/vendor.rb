@@ -79,5 +79,20 @@ module FarMar
       # vendor.sales.inject(0) {|sum, vendor| sum + vendor.revenue if vendor.purchase_date == Date.parse(date)}
       vendor.sales.select { |vendor| vendor.purchase_date == Date.parse(date) }.inject(0) { |sum, vendor| sum + vendor.revenue }
     end
+
+    def self.find_by_x(match)
+      # where X is an attribute, returns a single instance whose X attribute
+      # case-insensitive attribute matches the match parameter. For instance,
+      # FarMar::Vendor.find_by_name("windler inc") could find a FarMar::Vendor
+      # with the name attribute "windler inc" or "Windler Inc".
+
+    end
+
+    def self.find_all_by_x(match)
+      # works just like `find_by_x` but returns a collection containing all
+      # possible matches. For example `FarMar::Market.find_by_state("WA")` could
+      # return all of the FarMar::Market object with `"WA"` in their state field.
+
+    end
   end
 end

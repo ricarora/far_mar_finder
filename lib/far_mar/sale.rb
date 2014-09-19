@@ -41,5 +41,20 @@ module FarMar
       # between the two times given as arguments
       Sale.all.find_all { |sale| Time.parse(beginning_time) < sale.purchase_time  < Time.parse(end_time) }
     end
+
+    def self.find_by_x(match)
+      # where X is an attribute, returns a single instance whose X attribute
+      # case-insensitive attribute matches the match parameter. For instance,
+      # FarMar::Vendor.find_by_name("windler inc") could find a FarMar::Vendor
+      # with the name attribute "windler inc" or "Windler Inc".
+
+    end
+
+    def self.find_all_by_x(match)
+      # works just like `find_by_x` but returns a collection containing all
+      # possible matches. For example `FarMar::Market.find_by_state("WA")` could
+      # return all of the FarMar::Market object with `"WA"` in their state field.
+
+    end
   end
 end
