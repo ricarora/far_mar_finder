@@ -27,7 +27,7 @@ module FarMar
 
     def vendors
       # returns a collection of FarMar::Vendor instances that are associated
-      # with the market by the market_id field.s
+      # with the market by the market_id field.
       Vendor.all.find_all {|vendor| vendor.market_id == @id}
     end
 

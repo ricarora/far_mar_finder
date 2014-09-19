@@ -53,7 +53,7 @@ module FarMar
     end
 
     def self.by_market(market_id)
-      # returns all of the products with the given market_id
+      # returns all of the vendors with the given market_id
       market = Market.find(market_id)
 	    market.vendors
     end
