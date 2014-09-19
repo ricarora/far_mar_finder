@@ -24,7 +24,8 @@ module FarMar
     def vendor
       # returns the FarMar::Vendor instance that is associated with this vendor
       # using the FarMar::Product vendor_id field
-      Vendor.all.find {|vendor| vendor.id == @vendor_id}
+      #Vendor.all.find {|vendor| vendor.id == @vendor_id}
+      Vendor.find(@vendor_id)
     end
 
     def sales
