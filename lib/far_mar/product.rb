@@ -65,5 +65,6 @@ module FarMar
       # possible matches. For example `FarMar::Market.find_by_state("WA")` could
       # return all of the FarMar::Market object with `"WA"` in their state field.
       Product.all.select { |product| product.send(search_what.to_sym).casecmp(match) == 0 }
+    end
   end
 end

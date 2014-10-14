@@ -1,4 +1,4 @@
-#require 'csv'
+require 'csv'
 module FarMar
   class Market
     attr_reader :id, :name, :address, :city, :county, :state, :zip
@@ -78,5 +78,19 @@ module FarMar
       # return all of the FarMar::Market object with `"WA"` in their state field.
       Market.all.select { |market| market.send(search_what.to_sym).casecmp(match) == 0 }
     end
+  end
+end
+
+a = [10, 100, 1000, 10000]
+m = FarMar::Market.all
+
+Benchmark.bm do |x|
+  a.each do |n|
+    puts "Running #{n} iterations..."
+    x.report { Market.find(rand(223) * n) }
+    # x.report { m.linear_time_method(n) }
+    # x.report { m.linear_time_method(n) + m.quadratic_time_method(n) }
+    # x.report { m.quadratic_time_method(n) }
+    # x.report { m.quadratic_time_method(n) + m.quadratic_time_method(n) }
   end
 end
